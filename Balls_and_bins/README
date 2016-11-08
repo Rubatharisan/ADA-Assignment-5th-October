@@ -1,0 +1,118 @@
+TL;DR:
+Check the bottom of this document for my answers related to the questions.
+
+#####
+## Normal random distribution
+####
+---
+Lets distribute 10007 balls into 10007 bins
+--
+Bin with a maximum 7 balls exists in our bins array
+Bins with one ball: 3666 bins
+Bins with more than one ball: 2683 bins
+Bins with no balls: 3658 bins
+
+#####
+## Power of two choices distribution
+####
+---
+Lets distribute 10007 balls into 10007 bins
+--
+Bin with a maximum 3 balls exists in our bins array
+Bins with one ball: 5314 bins
+Bins with more than one ball: 2299 bins
+Bins with no balls: 2394 bins
+
+
+#####
+## Calculation and conclusion
+####
+
+------------------------------
+# Normal random distribution
+Expected number of max balls in a bin with the use of normal random distribution is expressed as: log(n)/log(log(n))
+=> log(10007)/log(log(10007)) = 3.5606263206088693 ~ 4 balls
+
+** Comparison with our test results:
+Failure, the amount of max balls in our test ( 7 balls ) is not with in our threshold ( 4 balls ).
+Maybe my random generator is not truly random? Did I mess up somewhere in my code?
+
+------------------------------
+# Power of two choice random distribution
+Expected number of balls in a bin with the use of power of two choices is expressed as: log(log(n))
+=> log(log(10007)) = 3.7321304501591923 ~ 4 balls
+
+** Comparison with our test results:
+Success, the amount of max balls in a bin done by our test ( 3 balls ) is with in our threshold ( 4 balls )
+Our theory is confirmed with: O(log(log(N)))
+------------------------------
+
+
+
+#####
+## Normal random distribution
+####
+---
+Lets distribute 1000000 balls into 1000000 bins
+--
+Bin with a maximum 8 balls exists in our bins array
+Bins with one ball: 367249 bins
+Bins with more than one ball: 264596 bins
+Bins with no balls: 368155 bins
+
+#####
+## Power of two choices distribution
+####
+---
+Lets distribute 1000000 balls into 1000000 bins
+--
+Bin with a maximum 4 balls exists in our bins array
+Bins with one ball: 532072 bins
+Bins with more than one ball: 229440 bins
+Bins with no balls: 238488 bins
+
+
+#####
+## Calculation and conclusion
+####
+
+------------------------------
+# Normal random distribution
+Expected number of max balls in a bin with the use of normal random distribution is expressed as: log(n)/log(log(n))
+=> log(1000000)/log(log(1000000)) = 4.617013078381095 ~ 5 balls
+
+** Comparison with our test results:
+Failure, the amount of max balls in our test ( 8 balls ) is not with in our threshold ( 5 balls ).
+Maybe my random generator is not truly random? Did I mess up somewhere in my code?
+
+------------------------------
+# Power of two choice random distribution
+Expected number of balls in a bin with the use of power of two choices is expressed as: log(log(n))
+=> log(log(1000000)) = 4.316983346365776 ~ 5 balls
+
+** Comparison with our test results:
+Success, the amount of max balls in a bin done by our test ( 4 balls ) is with in our threshold ( 5 balls )
+Our theory is confirmed with: O(log(log(N)))
+------------------------------
+
+
+=== Answers to the questions related to Balls and Bins ===
+
+What is the maximum number of balls in a bin if 10,007 balls are randomly distributed in an equal number of bins?
+
+    With the use of log(n)/log(log(n)), the result will be: log(10007)/log(log(10007)) = 3.5606263206088693 ~ 4 balls
+
+How can this be expressed mathematically?
+
+    log(n)/log(log(n)) => log(10007)/log(log(10007)) = 3.5606263206088693 ~ 4 balls
+
+How many balls must there be room for in each bin if the number is 1,000,000 for balls as well as bins, and you wish to avoid overflow?
+
+    log(n)/log(log(n)) => log(1000000)/log(log(1000000)) = 4.617013078381095 ~ 5 balls
+
+Solve also the above problems using the power of two choices principle. Is the Θ(log log N) theory confirmed?
+
+    Compared to my results, the theory is confirmed.
+    log(log(1000000)) = 4.316983346365776 ~ 5 balls
+    Bin with a maximum 4 balls exists in our bins array
+    The amount of max balls in a bin done by our test ( 4 balls ) is with in our threshold ( 5 balls )

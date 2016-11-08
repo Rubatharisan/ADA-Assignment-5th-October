@@ -1,0 +1,26 @@
+Output of TreeTester.java
+
+Parent: 100
+L: 10
+Parent: 100
+R: 20
+Parent: 10
+L: 30
+Parent: 10
+R: 40
+Parent: 20
+L: 50
+Parent: 20
+R: 60
+Parent: 30
+L: 70
+
+Post Order: 70 30 40 10 50 60 20 100 
+Pre Order: 100 10 30 70 40 20 50 60 
+In Order: 70 30 10 40 100 50 20 60 
+Level Order: 100 10 20 30 40 50 60 70 
+
+Number of nodes: 8
+Number of leaves: 4
+Number of full nodes: 3
+
